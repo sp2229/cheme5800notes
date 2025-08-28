@@ -8,3 +8,31 @@ Advantages of binary is exactness
 In floating point world, decimal points show fixed precision and it is lost 
 Float (16) is less precise than float (64)
 Example: pi is not an infinite length, determined by float length 
+
+# Julia example: how digits() works with base and padding
+
+# Step 1: Convert decimal number 1694 to base 8 (octal).
+# 1694 ÷ 8 = 211 remainder 6
+# 211 ÷ 8 = 26 remainder 3
+# 26 ÷ 8 = 3 remainder 2
+# 3 ÷ 8 = 0 remainder 3
+# -> So in octal: 1694 = 3 2 3 6 (base 8)
+
+# Step 2: Julia's digits() returns the digits in *reverse order* 
+# (least significant digit first).
+bit_pattern_array_octal = digits(1694, base=8, pad=16)
+
+# This gives: [6, 3, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+# Explanation:
+#   - "6" is the ones place in base 8
+#   - "3" is the eights place
+#   - "2" is the 64s place
+#   - "3" is the 512s place
+# The trailing zeros are padding to make 16 elements total.
+
+println("Octal digits (reversed, padded to length 16):")
+println(bit_pattern_array_octal)
+
+# Step 3: If we want the normal order (most significant first),
+# just reverse the array:
+bit_pattern_array_octal_normal = r
