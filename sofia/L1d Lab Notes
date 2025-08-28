@@ -1,0 +1,10 @@
+To convert a character into numbers: 
+bit_pattern_array = bitstring(xₒ) |> collect |> reverse .|> x-> parse(Int,x) # This is a magical line!
+
+Object, string, etc. made an integer using a hash
+
+Computers use binary (base=2) because computers can only operate at high or low voltage. 
+Advantages of binary is exactness
+In floating point world, decimal points show fixed precision and it is lost 
+Float (16) is less precise than float (64)
+Example: pi is not an infinite length, determined by float length 
