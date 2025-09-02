@@ -4,3 +4,39 @@
 - using Pkg 
 - check for manifest file:
 if(isfile(joinpath(_ROOT, "Manifest.toml")) == false)
+/otimes is a character code tab allows to translate math 
+\in is mapped to a function
+
+Force uniqueness by making a set as a data structure 
+push! function pushes set 
+Inserting a non-character element into a set is NOT possible BUT U CAN DO 2 |> Char (this does an output of \X02 which is the map)
+
+character_array_test_string_ascii = test_string_ascii |> collect
+returns an array of ascii/unicode u+00## which is a base 16 number converted to unicode
+\
+
+test_unicode_char = '' gives the unicode of the emoji 
+test_char_index = Unicode.julia_chartransform(test_unicode_char) |> Int gives the number in unicode of the emoji
+
+base 16 has 0^15 digits
+Create dictionary of hexadecimal number to come up with Unicode value: hexadecimal_digits_dictionary = let
+
+    # initialize 0
+    hexadecimal_digits_dictionary = Dict{Int,Char}()
+    base = 16; # what base are using?
+
+    # loop: process each digit 0 -> 15
+    for i ∈ 0:(base - 1)
+        hexadecimal_digits_dictionary[i] = '0' + i |> Char # hmmm! This is whacky; why does this work?
+        if (i > 9)
+            hexadecimal_digits_dictionary[i] = 'A' + (i - 10) |> Char 
+        end
+    end
+    hexadecimal_digits_dictionary # return
+end
+
+
+ASCII allows us to represent different languages in text and represent mathematical text 
+
+base 16 are hexadecimal number and you want to use them to use more languages, takes complex number or thing in a compound form (4 or 6 digit number) 
+COMPRESSION OF INFORMATION
