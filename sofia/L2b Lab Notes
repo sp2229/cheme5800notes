@@ -1,0 +1,6 @@
+- 
+- Get into directory using cd and ls it 
+- Open julia
+- using Pkg 
+- check for manifest file:
+if(isfile(joinpath(_ROOT, "Manifest.toml")) == false)
