@@ -6,6 +6,7 @@ Press control(^) then (~) to open terminal
 Type julia
 Type Using Pkg 
 Type Pkg.add("IJulia")
+jupyterlab(dir = pwd())
 Type (])
 Type status
 Type build
