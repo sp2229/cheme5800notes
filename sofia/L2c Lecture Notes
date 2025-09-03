@@ -1,0 +1,71 @@
+A function is defined using function keyword or f(x)
+f: A--> B (A is input mapped to output)
+function is the key word 
+Julia :
+f(x) = expression is the shorter syntax
+return to return values 
+return typrs with ::ReturnType
+
+Not time efficient to not add return type annotation in Julia (more like C, less like pythong but can be hybrid)
+
+Fibonacci Sequence
+fibonacci_dictionary::Dict{Int,Int}
+Int is the type of the value, int is the output of the return 
+zero index arrays using dict 
+Using {} to define type
+
+If is conditional, == is if something is true 
+
+Range
+for i ∈ 2:n (E is the range), #option 1 to set range, more efficient
+test_range = range(2, stop=n, step=1) |> collect #option 2 to set range
+
+to return values, you need to return the type that is an int
+Tuple is a list type that cannot be changed
+Array is mutable, tuple is not 
+
+Dictionary does not give sequence in order, does not mantain insertion order, need to organize keys in a certain way 
+You can sue an ordered dictionary
+Could of used an offset array 
+do not need to store then in order because we can simply look up value 
+
+Method Error means you are doing something wrong 
+We have to be a defensive programmer and create errors to let users know things are not the right input type, value range, etx.
+
+Scope Error: Declared outside a cell the type, need to explicitly set before. 
+#to define an error
+fibonacci_dictionary_2 = nothing; #this makes sure the argument exists, define this to call later
+try
+    fibonacci_dictionary_2 = fibonacci(22) # n = -10. This should throw an error
+catch e
+    println("Caught an error: $e") #need to define error or program will not run and you will not know why
+end
+println("Program continues after handling the error.")
+
+fibonacci_dictionary_2 |> typeof #type of returns type NOTHING 
+Nothing is a type in Julia (null in other languages)
+Dict{Int64,Int64} #also empty cells/dictionary
+
+#Composite types: Array 
+#mutable struct MyFibonacciSequenceModel <: AbstractSequenceModel # n is number of elements in sequence, sequence dictionary
+
+#yFibonacciSequenceModel() = new() #undefined and empty sequence is built here 
+
+#An immutable struct to represent a for loop iteration model. This type has no fields and serves as a marker for a for loop iteration implementation.
+"""
+struct MyForLoopIterationModel <: AbstractIterationModel
+    MyForLoopIterationModel() = new();
+end
+
+# No functions/objects associated with the type
+# Need functional type language with Julia (structured)
+
+#! At the end of the function indicates a mutating function 
+
+ iterationmodel::T = MyForLoopIterationModel()) where T <: AbstractIterationModel #optional keyword argument 
+ #T <: AbstractIterationModel #this means it can be anytype that satisfies that condition, T is a child of abstract iteration model
+
+
+  _fibonacci(sequencemodel, iterationmodel); #this is an internal private Method
+
+  
