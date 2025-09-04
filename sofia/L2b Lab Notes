@@ -41,3 +41,24 @@ ASCII allows us to represent different languages in text and represent mathemati
 base 16 are hexadecimal number and you want to use them to use more languages, takes complex number or thing in a compound form (4 or 6 digit number) 
 COMPRESSION OF INFORMATION
 
+(_) tells you it is a private function 
+Never call an underscore, only look at implementation, takes sequence and iteration model (while or for loop)
+
+for loop implementation automatically chosen by multiple dispatch (algorithm checks the input type)
+
+Multiple dispatch in Julia is a core feature where the method that gets called for a function depends on the types of all its arguments, not just the first one (as in single dispatch, like in many object-oriented languages).
+
+How it works
+When you call a function, Julia looks at the types of every argument and picks the most specific method that matches. This allows you to write different versions of a function for different combinations of argument types.
+
+Example
+Why is it useful?
+Flexibility: You can define specialized behavior for different type combinations.
+Performance: Julia can optimize code paths for specific types.
+Expressiveness: Code is easier to read and maintain.
+Gotcha
+If you define a function for only some type combinations, calling it with an unsupported combination will throw a MethodError.
+
+Summary:
+Multiple dispatch lets Julia choose the best method based on all argument types, making code generic, fast, and expressive.
+
