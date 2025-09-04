@@ -1,0 +1,26 @@
+Argument types in julia help it distinguish Fibonacci for loop vs./ while loop
+A good example is the function: 
+Push bang has million of versions and is able to match the argument type to the function
+
+Create an empty model, set values, 
+
+make a factory build method to get default values for parameters 
+
+
+Factory Method 
+Mutations: 
+Set default method for computation 
+Mutation effect got data 
+need to say return to get data out of a function 
+fibonacci! (mutation) executed at last line, \
+when passing into function in julia, we pass the memory reference (if mutable, memory address is updated)
+if you have a mutable collection into a function, any change is reflected outside of the function even if collection is NOT returned
+Julia function does mutate its domain 
+
+A named tuple is a list with names, like a dictionary, but immutable 
+
+How to load code into notebook? INCLUDE THE INCLUDE 
+Include-student.jl (path to source in student goes to src, solution goes to solution)
+
+error stops the code
+warning sets a default and continues to run the code but notifies user 
