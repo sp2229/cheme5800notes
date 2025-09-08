@@ -1,4 +1,14 @@
-Opening Julia 
+JULIA SETUP INSTRUCTIONS FOR CHEME 5800 LABS
+
+PREREQUISITE: You must have access to the lab repository through GitHub Classroom.
+If you're getting "invalid invitation" errors, see GITHUB_CLASSROOM_TROUBLESHOOTING.md
+
+Opening Julia Setup for CHEME 5800 Labs
+
+IMPORTANT: These instructions are for the lab repository (CHEME-5800-Labs-Fall-2025), 
+NOT this notes repository (cheme5800notes). Make sure you have accepted the GitHub 
+Classroom invitation and cloned the correct lab repository first.
+
 Open GitHub Desktop 
 Find Problem Set/Lab/Document of choice (make sure it is the student version)
 Restart kernel 
@@ -41,7 +51,7 @@ Make sure that all the files are included and check by going to the directory pa
 
 
 
-Code looks like this: 
+Code looks like this (NOTE: This should be in your lab repository, not the notes repository): 
 
 spmelendrez@dhcp-vl2041-19297 CHEME-5800-Labs-Fall-2025 % cd labs
 spmelendrez@dhcp-vl2041-19297 labs % cd week-1
