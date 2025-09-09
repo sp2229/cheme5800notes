@@ -1,0 +1,26 @@
+Linear Data structures are collections of elements arranged in a sequential manner, where each element is connected to its predecessor and successor  (arrays, queues, stackls, linked list)
+
+Non-linear data structure is like a linked family tree, hierarchy: organize branching and networked elements --> harder to walk around them 
+
+Linear data structure is one thing connected to the next and so on and so forth
+
+
+Queues follow first in principle, imagine a line and first in line is first out of the line
+
+Stacks is last in first out, imagine a stack of coins on a table and top stacked coin was last stacked, first out
+
+Linked Lists is chain of networks 
+
+How to access elements inside of an array? 
+
+Sets/dictionaries are not linear but behave like an array 
+
+Arrays are fixed sized homogenous collection of elements of the same type 
+
+In C, an array is found by memory address (C2)
+In Julia and in Python, goes to array and adds bites (8bites for each index)
+
+3D arrays are tensors, can be done with julia, useful for images (RGB images)
+
+For loop-need to know how many elements 
+while loop- do not need to know and use condition
