@@ -24,3 +24,46 @@ In Julia and in Python, goes to array and adds bites (8bites for each index)
 
 For loop-need to know how many elements 
 while loop- do not need to know and use condition
+
+Tuple is immutable (read only)
+
+Non-linear data set has no notion of indec (container with random stuff)
+
+While loop iteration pattern (dont know how many elements)
+
+Create set of first names, iterate over set if you do not know items (while loop)
+
+stack is like putting money down on a table 
+pointer to the top of the stack 
+push! goes to the top of the stack 
+pop! takes top element OFF the stack 
+
+
+type of thing to build (data needed to build it)
+compound_stack = build(Stack{Char}, compound for stack)
+
+mutating command 
+
+while (isempty(compound_stack) == false)
+    c=pop!(compound stack)
+    @show (compound stack)
+end
+
+
+to get stuff onto the queue --> dequeue
+
+
+add a string to a stack 
+
+Chars = collect(string) 
+
+Index arrays
+
+
+functions vs. methods 
+
+Julia: 
+function is a high level function
+method is specialized for a data type 
+
+can we use pop! on another type? YES!!! There are 76 methods that work for pop! 
