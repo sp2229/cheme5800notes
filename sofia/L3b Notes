@@ -1,0 +1,18 @@
+Bubble Sort 
+
+Simple algorithm to sort a list
+- repeatedly passes through the list and compares all items next to it and swaps out of order items until the list is sorted
+
+
+- unsorted list of elements vector a 
+n<--length(a)
+swapped<--true indicated swap has occurred
+- if a(i)>a(i+1), then call the swap method and update the list 
+- update the list length to n-1
+- if swapped goes to false, then algorithm terminates
+
+
+bubble sort is the fastest for bshort lists, but julia sort is the fastest for a long list
+
+- recursion is not the fastest all the time....
+- why would we build our own? always use somebody elses implementation!!!!
