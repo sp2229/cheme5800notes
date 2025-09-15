@@ -31,6 +31,7 @@ Adjacency Matrix A: represents entry row for i,j
     --> Ways around this: do not need to store all vertices, only store non-zero elements 
     --> Adjacency List: Store the index of the node and that will be a key that can point to a value that is the connections of that node, does not reveal weight of the connections (V+E size)
     --> Adjacency Matrix has size (V^2)
+    --> adjacency list always used, always use dictionaries
 Unweighted graph: if an edge connected node i to node j, a(ij)=1
 
 Complete graph: simple and undirected graph where every vertice is connected by an edge
@@ -45,5 +46,11 @@ Network Flow: Supply chain model
 Biological: social and genes that regulate protein expression 
 
 
-Hall's Marriage Theorem: Enough choices for everyone to find a match 
+Hall's Marriage Theorem: bipartite graph pairs each vertex on the left with a vertex on the right if there are enough potential partners on the right side 
+
+Rooted tree has branch that is a node with children and so on until the bottom of the tree the last nodes are leaves 
+
+Binomial tree for pricing assets (wether one price can go up or down to show distribution of ppossible prices!)
+
+
 
