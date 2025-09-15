@@ -1,0 +1,49 @@
+Graphs and Trees: 
+- Model decision processes, social networks, etc. 
+
+
+Simple Graph has V vertices and E edges
+Each pair of vertices has one edge between them and no sel-loops
+Directed: specific direction (person A follows B, but B does not follow A) 
+    Degree: number of edges associated with a node in an undirected graph G (edges connected to the node, no direction necessary)
+    w13 index (1 is node coming from and 3 is node going to)
+Undirected: no direction 
+    In-Degree: number of edges into a node in a directed graph G
+    Out-Degree: number of connections going out (directional edges)
+Connected: At least 1 path between vertices i and j
+
+Vertex Degree 
+
+The degree of a vertex X in a graph H 
+
+In-degree + Out degree = total degree
+Handshaking Lemma: Sum of all degrees of vertex is equal to twice the number of edges 
+
+Average Degree: 2*Edges / vertex
+GraphDensity: 2*Edges / (n*(n-1))
+Regular Graphs: regular if every vertex has the same degree r for all vertex 
+
+Graph G=(V,E)
+Adjacency Matrix A: represents entry row for i,j
+    --> Does not tell you wether a graph is directed/undirected 
+    --> High Density (lots of nonzero elements)
+    --> High memory (matrix is vertices ^2 * 8 bytes )
+    --> Ways around this: do not need to store all vertices, only store non-zero elements 
+    --> Adjacency List: Store the index of the node and that will be a key that can point to a value that is the connections of that node, does not reveal weight of the connections (V+E size)
+    --> Adjacency Matrix has size (V^2)
+Unweighted graph: if an edge connected node i to node j, a(ij)=1
+
+Complete graph: simple and undirected graph where every vertice is connected by an edge
+
+Graphs that you can use to model the relationships between people in a friend group, classifying data in a matching between two sets 
+Negative relationship: cause problems, specialized algorithms required 
+
+Bipartite graph: check to see with coloring 
+
+Matching problems: model scenarios where something has ot be matched 
+Network Flow: Supply chain model 
+Biological: social and genes that regulate protein expression 
+
+
+Hall's Marriage Theorem: Enough choices for everyone to find a match 
+
