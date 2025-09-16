@@ -53,4 +53,14 @@ Rooted tree has branch that is a node with children and so on until the bottom o
 Binomial tree for pricing assets (wether one price can go up or down to show distribution of ppossible prices!)
 
 
+Neighbors are children 
+Find neighbors of starting node, call ourselves again but neighbor represents starting node 
+
+Breadth-first: 
+- visits all children 
+-uses a queue built into a while loop 
+- node 2, visits all children before moving forward
+
+Depth-first: 
+- picks a child and goes to it, then drills down a graph in a recursive call 
 
