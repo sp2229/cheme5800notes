@@ -1,0 +1,59 @@
+Shortest Path Algorithms 
+
+- Dijkstra's Algorithm: breadthfirst search with a priority queue
+- Bellman-Ford: interogate graphs with negative edge weights, brute force iterative technique that is less efficient that dijkstra's 
+
+- Vertex U and Vertex B have a weight between them (trave time, distance)... i.e. cost of going from U to B 
+- A path is the sequence of vertices to get from point U to B, sum of individual weights is the path weight 
+- Want the path with the lowest weight 
+
+Brute Force: Look at every possible path and chose the one with the least weight 
+
+Optimal Substructure Property: Ok so we have point A to B and in between is X. If we have a shortest path from A to X, then we can find a path from X to B. 
+
+Greedy Strategy (Dijkstra's): Continuously chosing the smallest cost, building shortest path one step at a time 
+
+Why do negative weights complicate things? 
+
+- Imagine you have found the shortest path, but discover a path with negative-weight edges that has a lower total cost 
+
+Dijkstra's Algorithm: 
+- A queue models first in first out (british english--> grocery store--> line--> first in first out)
+- A priority queue, where a weigh is associated and queue is rearranged based on the weights, rearranged weights, SORTED QUEUE 
+- A priority queue is a sorted queue 
+- Map is a disctionary
+
+
+Dijkstra's Algorithm: 
+- Set first node distance to 0 since it is the start node 
+- If v=s, set dist (v) <--0, prev(v)<--nothing
+extract vertex with smallest distance from the priority queue: u <-- dequeue(Q)
+- Get the neighbors of u 
+- For each neighbor, 
+    if dist(u)+ w(u,v)< dist (v)
+    update dist(v) <-- dist (u) + w(u,v)
+    update prev (v)<--u
+    add v to priority queue: Q<--enqueue(Q,v,dist(v))
+
+Complexity: O((V+E)*log(V)), where E is edges in graph and V is number of vertices in the graph 
+***Need to warn user if there is a negative weight before implementing***
+
+Belman Ford can handle negative edge weights
+- Iteratively looks at edges of graphs 
+- Edge weights are scalars but can be negative 
+- For each edge in our set, if the distance from node u to v is not infinity and the distance from u to v is less thant the dist to v 
+    update the distance: dist v = dist u + w(u,v)
+    update previous vertex: prev (v) <-- u 
+
+    After v-1 iterations, perform one more pass through all edges for engative cycle 
+    for each edge(u,v)
+    if dist(u) is not infinity 
+
+In a negative weight path, there is a cycle and the path can never end, inneficient and not usually the short path 
+- Negative weight cycle reduced overall cost bc negative edge weight but is not going to ever reach terminal end and you get stuck 
+- Greedy choice is always taking the shortest contribution 
+
+
+
+In bipartite graph, 
+a graph with negative edge weights and cycles CANNOT use bellman ford because the path will never be made 
