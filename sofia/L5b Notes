@@ -1,0 +1,46 @@
+Maximum Flow Calculations: 
+- Residual graphs make maximum flow calculations work 
+- Function to call, not going to implement it 
+- Bipartite network (unbalanced)
+
+Maximum Flow Problem: 
+- consider bipartite direct graph where each edge has a capacity associated with it 
+- ignore weight, look at capacity
+1. capacity constraint: between nodes, the flow through the edge is bounded from below by 0 and bounded above by the capacity 
+2. conservation at the nodes: if one unit of flow into the node, one goes out (cannot accumulate flow in the node)
+    i. Router has a flow conservation, stores unprocessed message in a queue data structure
+    ii. Flow comes in, has to come out
+- Value f is the amount elaving the source: sum of source to nodes that is coming in minus the flow coming out 
+- Maximum of value f optimizes the problem
+- Ford-fulkerson method is a greedy method like dijkstra 
+
+Ford-fulkerson method: 
+- Building flow one block at a time until no further increase 
+- General approach to maximum flow 
+- Augmenting path is a path from the source node to sink node where additional flow can be sent (the flow along this path can be increased, augmenting the total flow in the network)
+
+
+Initialization: 
+- Start out with flow set as 0, no flow in the network
+- while there exists a path from s to t in the residual graph
+    a. when there is a path that has extra capacity
+    b. take capacity and subtract flow currently carrying and take minimum 
+    c. update forward flow, update reverse flow
+    d. update residual graph 
+
+Residual Graph has set of original network 
+- All nodes that have residual > 0
+- Forward edge is the capacity - flow ; can carry- already carrying 
+    - any pair with residual > 0, increase the flow to maximize it 
+
+How to find augmenting paths? 
+- Edmonds-Karp algorithm (breadth first search):
+    - visits all children 
+    - uses a queue built into a while loop 
+    - node 2, visits all children before moving forward
+- Depth First Search (generic);
+    - picks a child and goes to it, then drills down a graph in a recursive call 
+
+
+
+
