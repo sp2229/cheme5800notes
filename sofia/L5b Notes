@@ -34,7 +34,7 @@ Residual Graph has set of original network
     - any pair with residual > 0, increase the flow to maximize it 
 
 How to find augmenting paths? 
-- Edmonds-Karp algorithm (breadth first search):
+- Edmonds-Karp algorithm (breadth first search): use this 
     - visits all children 
     - uses a queue built into a while loop 
     - node 2, visits all children before moving forward
