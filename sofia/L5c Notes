@@ -1,0 +1,49 @@
+Linear Programming 
+- Uses: Resource Allocations, Production planning, Network Flow, Flux Balance Analysis (in and out of cells, antibodies/diseases)
+- Primal Problem, chose how much of an activity (item) to purchase to minimize/maximize 
+- How to maximize satisfaction subject to a constraint 
+
+
+Dual Linear Problem: 
+- Maximizing satisfaction with some budget constraint (utility fxn)
+- How to spend minimum resource to reach same level of satisfaction (opposite of linear programming)
+
+Lagrange Medium and Karush-Kuhn-Tucker (KKT)
+
+Two Goods Resource Allocation Problem: 
+Primal Linear Programming Problem: 
+- Decision variables to select are (x- amount of something) and (c-cost per unit of x)
+- Sum of c*x for all i is subject to linear algebraic constraints: 
+    Ax <= b, each row in x is a constraint (budget is a column with many rows of budget), A is an m x n matrix (m number of constrants)
+- Minimizing a linear fxn 
+- Consumer has budget I, x(i) is the units of product i 
+- Maximize utility sum across all i (ui*xi) subject to the constraint that the sum of (xi*ci) is less than budget I 
+
+- JUMP is a simple programming language 
+- Layer between julia and C 
+
+Example: APPLES & ORANGES 
+- Set up bounds 
+- Upper bound (theoretical on each option, spent all of budget on apples or oranges) = total budget divided by maximum on each apple/orange
+- Lower bound, spent $0 
+- 
+
+# primal_problem = build(MyLinearProgrammingProblemModel, (
+    
+    # c = u, # coefficients in the Utility function (objective)
+   #  A = c, unit prices of x1 and x2 (we need this as a matrix in this # formulation)
+   # b = [total_budget], # budget is the right-hand side
+    
+    # how much of x₁ and x₂ can we buy?
+    # lb = bounds[:,1], # lower bound
+    # ub = bounds[:,2] # upper bound));
+
+# Use multiple dispatch to build documentation 
+
+# A * x == b (equality implementation)
+# optimize!(model) runs the optimization, slower
+
+- Always a corner where the number of apples is maximized, the happier the better, objective is a line, different combinations of apples and oranges that maximizes the happiness but respects budget constraint 
+- when slope of happiness funciton is greater than budget, corner point solution
+- when slope of happiness funciton is less than the budget, corner point solution 
+- when slope is equal, infinite number of solutions, indiferent in happiness from a user level 
