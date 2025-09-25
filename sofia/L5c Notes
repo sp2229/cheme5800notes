@@ -47,3 +47,33 @@ Example: APPLES & ORANGES
 - when slope of happiness funciton is greater than budget, corner point solution
 - when slope of happiness funciton is less than the budget, corner point solution 
 - when slope is equal, infinite number of solutions, indiferent in happiness from a user level 
+
+
+Maximum Flow Problem 
+- Linear objective and linear constraints --> bounds 
+- Take graph model and turn it into objective function using contstraints/capacity/bounds for the functions
+
+
+- F represents the flow for every edge- cannot be negative, but can be 0
+- W is the weight and can be thought of as the cost 
+Af = b
+- A has number of nodes = number of rows
+- b is the right hand side vector where it is the size of number of nodes by 1 vector 
+    - F is i=s, source generates flow 
+    - F is i=t, sink consumes flow 
+    - 0 otherwise (flow conservation)
+- By default, need everything to be the same order 
+- Define lower and upper bounds 
+- Get coefficients
+- Laws of conservation 
+- 
+
+- Take weight and multiply by 10:
+ if s ==3 and t==6, 
+    wv=10*wv
+end
+
+- + c maximizes coefficient 
+- - c minimizes coefficient 
+
+
