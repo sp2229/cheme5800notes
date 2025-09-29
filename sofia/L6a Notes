@@ -1,0 +1,33 @@
+
+Dual Linear Programming
+- Each constraint is turned into a price and reveals best value
+- Verify primal calculation 
+- Shows how sensitive primal is to specific constraints
+- Shadow prices; each variable tells you how much the best achievable objective would improve
+- Uses simplex and interior point methods are iterative algorithms that use dual and keep iterating until duality gap approaches 0 
+
+Primal problem maximizes, dual is opposite and minimizes 
+- Primal problem has less constraints (n) than variables (m)
+- Coefficients of constraints and being minimized by shadow prices (y)
+- Subject to the constraint 
+- Variables in the primal are the constraints in the dual
+
+Duality 
+- Primal problem max{Ax=<b, x>=0}
+- Dual problem min{Ay>=c, y>=0}
+    
+Weak Duality: duality gap is difference 
+- for maximization: cx=<by 
+- for minimization: cv>=by
+
+Strong duality: optimal values, no/negligble duality gap 
+- max {cx}=min{by}
+
+primal_solution = solve(primal_problem, constraints = :eq)
+- Check is less than, greater than or equal to the constraints 
+- If constraint is invalid type, there will be an error 
+
+- When you transpose an array in julia, you get back transpose array, not a matrix 
+- Need to specify: A = transpose(A) |> Matrix
+
+Note: when the weights change, the objective value and duality gap changes 
