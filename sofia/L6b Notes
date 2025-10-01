@@ -1,0 +1,41 @@
+
+Iterative Methods for Solving Linear Equations
+- Square of Ax=b
+- Given A, b, and guess x using a while loop
+    (1) Set boolean to false
+    (2) Convergence Criteria
+    (3) Maximum number of iterations 
+    (4) Residual vector gives actual-guess vector 
+    (5) If small residual vector 
+
+- Split A into M-N
+- Split the x --> x with the M is the next iteration, x with N is current iteration 
+- x at the next iteration is being solved, need to take inverse
+- (b - Ax) is the error in iteration k and residual, used to direct new vector
+- direction of new x is current x plus the direction
+
+Convergence: 
+- Spectral radiance is largest eigenvalue
+- Would need infinite
+- Calculate how mnay iterations we need 
+E= residual
+e= error at initial guess --> guess-solution x(k) - x*
+k≥ln(E/||e(0||))/|ln(||G||)|
+...BUT WE DONT KNOW THE TRUE VALUE X*
+
+
+Jacobi 
+- Iterates slower than gauss seidel 
+
+Gauss Seidel Iteration 
+- calculates residual vector r<--b-Ax
+- if residual^2 < residual criterion
+- converges faster because it looks at more variables 
+- Update contains diagonal, lower triangular part, and upper triangular 
+
+Successive Relaxation
+- Faster than Jacobi and Gauss Seidel
+- w is a relaxation value
+- w is approximately 2/(1+√1-p(G)^2); where p(G) is spectral radius of the iteration matrix for the Jacobi method 
+- M= 1/w (D+wL)
+
