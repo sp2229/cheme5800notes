@@ -1,0 +1,52 @@
+
+Linear Models for dataset D 
+y(i)=x^Tø + e(i)
+    x^T = (x(i)1,x(i)2,..,x(i)m, 1) that has extra 1 to account for intercept term 
+    ø is a length p vector where p=m+1
+    e(i) is unibserved random error for response i 
+y=X^ ø + e 
+    X^ is nxp matrix with augmented features x(i)^T
+    y is a nx1 column vector with y(i) entries 
+    e is nx1 column vector with entries e(i)
+
+Overdetermined data matrix without regularization 
+- If X^ is overdeternimed --> n>>p, and an error model e ~ Normal(0,o^2I) is assumed 
+ø^ = argmin 0.5*||y-X^ø||^2
+- ||y-X^ø||^2 tries to minimize the noise and make it smaller for a better fit!
+- ||y-X^ø|| is a nx1 vector because x^ is nxp and ø is px1
+A Least Squares Problem: 
+- goal is to minimize ø^2 subject to x^ø=y
+- Least norm  ø^ =(X^TX^)^-1X^Ty
+xT is pxn 
+x is nxp 
+xTx is pxp and if has full rank (p) then it is invertible 
+- ø is unbiased 
+- taking the inverse pxp and multiplying by x^T (pxn) gives pxn matrix 
+- multiplying by y (nx1) gives px1 vector with is ø^
+- Expected value of ø^ is ø 
+- ø is a random vector becasue it is dependendent on e, a random variable 
+- Bayesian inference belives that everything is random 
+- minimizing residual gives no bias, expected value is true value 
+
+Underdetermined 
+- biased estimator of ø 
+- expected value is ø * p 
+
+SVD Overdetermined Systems 
+- Singular Value Decomposition 
+X^=U£V^T
+
+ø^ = £ (uiTy/oi)*vi 
+- (uiTy/oi) is a weighter scalar sum of right singular vector 
+- solution shows how each mode contributes to parameter estimates 
+- vi is the orthogonal directions in parameter space with ui is data space directions 
+- Computationally robust bc automatically handles redundant features and provides minimum norm solution without
+    manual intervention 
+- oi^-1 reveals whigh modes amplify noise and helps identify unreliable components of the solution
+
+
+Estimating the Error Variance 
+- r = y-X^ø^
+- true variance o^2 = ||r||^2 / (n-p)
+
+
