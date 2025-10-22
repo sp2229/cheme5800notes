@@ -1,0 +1,53 @@
+
+Nonlinear Optimization 
+- Karush-Kuhn-Tucker (KKT) conditions 
+Two algorithms to solve 
+    (1) Gradient descent: only for functions without constraints (barrier penalty removes constraints)
+    (2) Simulated annealing: heuristic (genetic/evolutionary) algorithms use samples (no derivates)
+        - Used when derivative has discontinuities 
+        - Derivative is not directly computable 
+        - slower 
+
+How to solve nonlinear constrained optimization: 
+    min f(x) {g(x) ≤ 0}
+    Lagrange(x,l,v) introduces multipliers li ≥ 0 and vj (free) for each equality 
+
+KKT Conditions required for optimality in constrained nonlinear problems:
+    (1) Stationarity: Derivative of lagrangian must vanish
+    (2) Primal feasibility: constraints must be satisfied at the optimal point 
+    (3) Dual feasibility: lagrange multipliers for inequality constraints are non-negative 
+    (4) Complementary slackness: each constraint g(x)=0 or the multiplier (l=0)
+
+
+Gradient descent: 
+- Iteratively updates the solution in the direction of steepest descent 
+- Fast algorithm
+- Designed for unconstrained problems 
+
+
+Penalty/Barrier Method: 
+- Penalizes solution to the objective function for equality constraints 
+- Barrier is used for inequality constraints 
+- Discourage algorithm from going in the direction
+
+while not converged: 
+1. compute the gradient of the current solution 
+2. update the solution for the next value 
+3. check convergence (x(k+1)-x(k)≤ e) then set converged <-- true 
+4. if k ≥ K, srt converged to true and warn that maximum iterations were reached without convergence 
+5. increment iteration counter k <-- k+1 and update u <--Tu and p <--Tp and repeat 
+
+
+As u--> 0, the barrier terms frows stronger to keep the solution away from constraint boundaries 
+
+As p--> 0, the penalty term grows stronger to enforce equality constraints 
+
+
+Chosing K 
+- initialize to K= c*size(x) where 10≤x≤≤50
+- after each temperature, compute the acceptance rate p
+    - If p>0.8, decrease K by 0.75 
+    - If p< 0.2 increase K by 1.5
+
+
+
