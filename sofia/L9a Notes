@@ -1,0 +1,37 @@
+
+Linear Models for Classification Tasks 
+- Adapt linear models for binary classification
+- Implement and analyze Perceptron algorithm
+
+Example: 2D feature vector (yes or no information) 
+- Estimating parameters that separate class 1 and class 2 in a SEPARATING HYPERPLANE
+- Activation function is used 
+to convert continous output into a probability or class designation 
+- Perceptron activation function = sing(x)
+- Compute the probability a feature has a label and uses a boltzmann distribution to describe the probability
+
+y^=sign(x^T ø)
+x^T is augmented
+- It will converge if data is linearly separable
+- if you have non-linearly separable data, allow mistakes and add a maximum # of iterations 
+
+How to do this: 
+1. initialize linearly separable dataset D, maximum number of iterations T, maximum number of mistames K, parameter vector ø=(w,b) to small random values and set loop counter t<--0
+- Set T=10n to 100n where n is the number of training examples
+
+While true, initialize number of mistakes =0
+- for each training example, compute y(øT x)<=0
+    if true, misclassified example (sign of prediction does not match the label y) so update ø and icnrement mistakes by 1
+- after processing, if mistakes is less than M or t>T, exit, otherwise increment t by 1 and repeat for next data point
+
+
+Confusion Matric for Binary Classification:
+- calculates table with actual positive or negative and then the prediction probabilities 
+- True positive TP
+-False positive FP
+- False negative FN
+- True negative TN
+
+
+Bank Note from UCI archive example
+- My PerceptronClassificationmModel instance
