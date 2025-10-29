@@ -1,0 +1,40 @@
+Weighted Majority
+- Deterministic algorithm
+- Binary decisions
+- Panel of experts giving 
+- Weighted majority gives each expert quality factor (weights)
+- Experts votes and majority of votes is what is selected
+- Goal is to limit losses
+- Assign quality factor to each expert 
+- Have true answer y(t) that is compared to expert vote 
+- Expert function looks at expert decision of wether stock will go up or down 
+- QQQ is NASDAQ 100 index and is close to SPY and was expert 1 --> closest to the true answer 
+- If expert is always correct, their weight will stay at 1
+
+
+- Expert 1 graph stayed at 1 but most experts who do NOT use perfect information approach a weight of 0 over time 
+    - Finite shelf-life of this algorithm
+
+
+
+Multiplicative weight algorithm 
+- Binary decisions 
+- n = # of experts
+- random algorithm 
+- instead of weights, assign probability distribution over all experts that gets updated over time 
+- Faith of all experts has to sum to 1 
+- At each round, categorical distribution draws from distribution (think bernoulli with multiple categories)
+    - Experts with higher. probabilities are more likely to be selected 
+    - Follow expert advice 
+- Probability of expert weight/ sum of all weights gives probability distribution
+- Modify algorithm to chose max (most trusted expert)
+- COmpute the cost of expert i and only update the weights of expert they chose 
+- If expert i was correct, our faith in them increases 
+    w(t+1)=w(t)*(1-ç*m(t))
+
+Regret: 
+- Idea of regret is from the algorithm (how WE solve this problem)
+- Score our strategy by quantity called regret (how our algorithm performs - theoretical benchmark)
+- Play game over t rounds, find best possible move at that round 
+- DO not know the answer when making a decision 
+- Sublinear regret --> as rounds goes to infinity, our regret average goes to 0!!!
