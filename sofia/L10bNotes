@@ -38,3 +38,16 @@ Regret:
 - Play game over t rounds, find best possible move at that round 
 - DO not know the answer when making a decision 
 - Sublinear regret --> as rounds goes to infinity, our regret average goes to 0!!!
+- Feedback from the world gets stored in the weights of each expert 
+    i.e. the weight strategy as we go to infinite number of terms performs like the best expert (we do not know him yet)
+- Is regret a way to chose an algorithm? 
+    build an algorithm that as we play it long enough, becomes as good as best algorithm 
+
+
+Example in CHEME: 
+- Did a mixture have a desired property?
+
+Example in Game Theory:
+Zero Sum Games
+- Game with multiple players where only one player wins
+- Goals are that rock 
