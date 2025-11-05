@@ -22,8 +22,8 @@ MDP Components:
     - In one state, action goes to the right, what is the probability that this action is taken 
     - Set probability of future states to 0 to constraint possible actions 
 - Discount factor, Y: A parameter that weights future rewards relative to immediate rewards, with prioritizing immediate rewards and valuing long-term returns.
-    - Y --> 1 looks at long term rewards
-    - Y --> 0 looks at short term rewards
+    - Y --> 1 looks at long term rewards, weighs future rewards, want close to 1 to get to best possible decision
+    - Y --> 0 looks at short term rewards, only immediate rewards
 
 Goal is to find a policy 'P': S --> A that aps states to actions (P(s)=a)
     - Need to learn the policy by walking around and experimenting in the world 
