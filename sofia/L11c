@@ -48,6 +48,21 @@ Value Iteration is dynamic prorgaming algorithm that iteratively applies Bellman
 - Next value U(k+1, s) comes from max (Reward of immediate action, Y*One step ahead)
     - Compare immediate reward vs. looking around and chosing over all possible states discounted with gamma
     - Max gives best reward
+    - If gamma is zero, always looking at all possible actions in immediate actions 
+    - As you explore around, you get a hint of the best way
 
 
+Algorithm 
+- Set initial value 
+
+while converge is false do: 
+    for each state s, 
+        pick a state and find next step 
+        check for convergence: 
+            if max (U(k+1)-U(k)) ≤ e, set converged <-- true and U* <--U(k+1)
+            if max (U(k+1)-U(k)) > e, update k<--k+1 and U(k)<--U(k+1)
+        Update converfed flag: 
+            if k ≥ T, set converged <--true
+    end 
+extract policy P*(s)<--argmax(next step, )
 
