@@ -1,0 +1,15 @@
+
+Markov Models and Chains
+- Models randomness in a visual way for building probability distributions 
+- 1 critical assumption
+- Markov property is that future random state only depends on current state
+- Memoryless models 
+- Transition matrix: product of probability of a state * state transition gives next state and allows us to generate 
+- Stationary distribution is the long time behavior of the system
+- Stationary distribution is probability you are going to see a state
+    - Sample of this distribution
+- Transition matrix only captures legal transitions at each time step
+    - Time sequence 
+    - Can make a categorical distribution and sample that 
+
+

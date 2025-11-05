@@ -1,0 +1,53 @@
+
+Markov Decision Processes (MDPs)
+Introduce:
+    (1) Actions 
+    (2) Rewards
+- Enable you to make optimal decisions giving framing of the world
+- MDP allow you to chose actions that influence transitions
+
+Value Iteration Algorithm 
+- deterministic 
+
+Random Rollout Sampling
+- random 
+
+MDP Components: 
+- Discrete states and categories 
+- State space, S: The set of all possible states 's' the system can occupy.
+- Action space, A: The set of all possible actions 'a' available to the agent. Set of possible accions is As = A
+    - Constrained action space allows us to capture boundaries
+- Reward function, R: The immediate reward received when taking action in state 's' and take action 'a'
+- Transition model, T: The probability that action 'a' in state 's' at time 't' results in state 's''at time t+1
+    - In one state, action goes to the right, what is the probability that this action is taken 
+    - Set probability of future states to 0 to constraint possible actions 
+- Discount factor, Y: A parameter that weights future rewards relative to immediate rewards, with prioritizing immediate rewards and valuing long-term returns.
+    - Y --> 1 looks at long term rewards
+    - Y --> 0 looks at short term rewards
+
+Goal is to find a policy 'P': S --> A that aps states to actions (P(s)=a)
+    - Need to learn the policy by walking around and experimenting in the world 
+    - Value iteration algorithm is based on agent learning a policy and then reporting it in policy 
+    - Different ways to store this, exmaple an array 
+
+Queque learning does not have model of rewards and is how humans learn things 
+
+Example: Grid World Navigation
+- Robot on a 3x3 grid world 
+- State Space S = 9 grid position with (i,j) coordinates
+    - n positions, n^2 states, does not scale well
+- Action space is set {up, down, left, right}
+    - soft constraint gives huge penalty for soft constraints, (ie this makes any action possible, but unknown have high penalties)
+    - +10 when you get to goal position 
+    - -5 points is moving to an obstacle
+    - Ruba cleaning robot uses this algorithm  
+    - High value of gamma thinks of longer term 
+
+Value Iteration is dynamic prorgaming algorithm that iteratively applies Bellman backup operation 
+- Computes optimal value function U*(s)
+- Next value U(k+1, s) comes from max (Reward of immediate action, Y*One step ahead)
+    - Compare immediate reward vs. looking around and chosing over all possible states discounted with gamma
+    - Max gives best reward
+
+
+
