@@ -1,0 +1,29 @@
+
+Bandit 
+Maximize cummulative rewards with best actions 
+- Agent in a state can take actions 
+    - Chose action a 
+    - Implement it 
+- Exploration vs. Exploitation 
+    - Exploitation --> already know the outcome "staying in comfort zone"
+    - Exploration --> always learning 
+- Example: which product will consumer chose from a variety
+
+3 algorithms for how to implement bandit form: 
+Explore-First Exploration: 
+- Expected regret over T round
+- regrent bound is total over all T 
+
+Epsilon Greedy Exploration 
+- agent choses the best arm and a random arm
+- K arms and T rounds
+- If p≤e, execute random uniform action 
+- If p>e, chose the greedy action 
+- regret bound is for each round t of the game
+
+Optimism Under Uncertainty 
+UCB1 ALgorithm 
+- calculated upper confidence bound 
+- builds up an intuition U based on the time and the number of times that that action has been pulled 
+- algorithm maximizes the ū (estimateed meandd return of arm)
+- 
