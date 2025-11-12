@@ -71,4 +71,9 @@ Combinatorial Action Spaces:
     - As t --> infinity converges to the true mean 
     - learning rate a=1/t 
     - sample mean = 1/number times pulled the arm 
+
 Combinatorial Epsilon Greedy Algorithm
+
+flower problem: make a bouquet to optimize utility given satisfaction and budget
+doing different combinations and chosing the one with highest utility under the constraints 
+equity assets
