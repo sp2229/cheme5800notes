@@ -1,0 +1,74 @@
+
+Bernoulli and Combinatorial Bandits 
+2 subtypes
+Bernoulli Bandit: 
+- Agent receives binary rewards 
+- Example is multiplicative weights, weighted majority (yes/no)
+- Two algorithms: 
+    - Epsilon greedy 
+    - Thompson sampling 
+- Binary Benoulli Bandit: 
+    - Special case of stochastic problem 
+    - Reward is either {0, 1} --> with the need to determine the p{1}
+    - Have a model of the world (bernoulli distribution)
+    - Goal is to maximize the expected reward by selecting the best action at each time step 
+    - Make the parameter of the bernoulli distribution the output 
+    - Bern(r, p) where r is {0, 1} and p is the probability of getting reward 1 
+    - Expected reward X~ Bern(r, p) is given by the E[X]=p and variance is p(1-p)
+    - Beta distribution is used because it is a flexible distribution that can adapt to many different situations
+        - Continuously varying from 0 and 1 
+    - Bayesian approach to bandit problem 
+        - Everything is a probability distribution 
+
+    Epsilon Green for Binary Bernoulli Bandit:
+    - Explore and learn the world OR use knowledge rto make decisions 
+    - Parameter £ decreases as we get further into the algorithm 
+    - K possible alternatives, number of rounds is much larger is K 
+    - Each choice has probability distributions (K bernoulli distributions, beta distributions)
+        - a=1 and b=1 for beta distribution 
+    - Agent adjusts parameters of alpha and beta distribution as it learns 
+    - Random p calculated and compute threshold 
+    - If random p is less than or equal to the threshold (threshold £=t^(-1/3**(K*log(t))^1/3*)), 
+        explore and chose random r then receive binary reward {0,1}
+    - If p is greather than threshold (p>£), estimate which choice has highest expected probability of success "greedy" 
+        - Uses agents model of the world 
+        Exploitation step:
+        - Use system knowledge to make a 'greedy' choice
+        - Highest probability action is a*=argmax{# times this returned a reward of 1/ total possible times}
+            - # times a reward of 1 was returned: a(a)+S(a)
+        - update success and failure arrrays for chosen arm using the reward 
+            S(a*) = S(a*) + r* 
+            F(a*) = F(a*) + (1-r*)
+- looks at mean to build beta distribution
+- exploring and exploiting
+
+Thompson sampling builds beta distribution for each arm
+- No threshold £
+- Sample from previous for each arm, not looking at samples mean from distribution
+- Always exploiting and using 'greedy' algorithm 
+- Friends who are very confident and have not learned about anything 
+- Probabilistically sampling --> random 
+
+Combinatorial Action Spaces: 
+- Example is designing optimal flower bouquet, optimum portfolio assets, combination of one thing vs. another 
+- Context is essential 
+- Choses a subset of actions 
+- K items 
+    each arm has a vector a={0,1}^K
+    N= 2^K possible arms to explore because each arm represents a unique combination  
+    Agent selects vector and samples combination, implements it and receives a reward (not necessarily binary)
+    2^60 is not doable, 2^20 has over 1 million combinations but as the number of items increases, the search is exhausting and will not be efficient
+    Too much computational work --> need to be clever 
+    Sparse exploration (agent never makes it to some combinations)
+
+    For each arm: 
+    - explore first and generate binary representation a = digits (i, base=2, pad=K)
+    - epsilon greedy computate threshold and if p≤ threshold
+    - threshold £
+    - if p>threshold, chose arm with greatest reward
+    - generate action  to make a = digits (i, base=2, pad=K)
+    - update average reward for arm i using weighted online average in t trials 
+    - As t --> infinity converges to the true mean 
+    - learning rate a=1/t 
+    - sample mean = 1/number times pulled the arm 
+Combinatorial Epsilon Greedy Algorithm
