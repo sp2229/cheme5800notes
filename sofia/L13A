@@ -1,0 +1,37 @@
+
+Q-Learning: 
+Model Free Reinforcement Learning 
+Action a to State s 
+- Multiplicative weights (experts and feedback) to minimize regret
+- Bandit algorithm is stateless
+- Q-learning is a value based method by finding utility of state
+    - Similar to value iteration 
+    
+Value Iterations
+Optimal Utility Value Function U = Reward for being in state s and taking action a + using physics model to find the probability*utility of being in state s'
+- Represents maximum expected cummulative discounted reward achievable from each state under the best possible policy 
+
+Imagine columns are actions and rows are states, utility (i,j)
+- Policy is for each row, chose action with maximum utility for state s
+- Ideas where this would not work:
+    -  Iinfinite actions 
+- Need to make eveything discrete state space
+Physical memory limitation does not take large data space
+- State action value function Q(s,a) repeats experiments t=1,2,... in the world W 
+- Q(s,a), (t+1) =  Q(s,a)(t) + a (r + b* max(Qt(s',a')- Q(s,a)))
+a= learning rate 
+b = discount factor 
+policy pi= max (Q(s,a))
+
+each state, initiralize t=1
+    roll random number, compute epsilon (threshold, k is number of actions)
+    if random number is less than threshold, chose random action
+    else chose greedy action 
+    receive reward from the world 
+
+reward shaping simulates what would happen if signal sent out at specific state, and as agent approaches the state,
+    feedback from the world 
+    take default reward and add fraction of charging reward
+    
+learning rate set to 0 will never move 
+- if existing world changes, the policy will not have a model of the changes --> initially learned from static current world 
