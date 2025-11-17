@@ -35,3 +35,5 @@ reward shaping simulates what would happen if signal sent out at specific state,
     
 learning rate set to 0 will never move 
 - if existing world changes, the policy will not have a model of the changes --> initially learned from static current world 
+- need a model where the model has the ability to reason and 'think' instead of memoriing best way in a static world
+
