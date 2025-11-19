@@ -1,0 +1,70 @@
+
+Deep Q-Learning and Policy Gradient Methods 
+- Review value based methods 
+- Value-Based and Policy Gradient Methods 
+
+Traditional Q Learning: 
+State Action Value Fxn 'Q' --> Brain
+    Rows are states
+    Columns are actions 
+    ij'th state is the utility of going from state j from state i
+    For each state look at highest utility action and this is the policy π
+What is wrong?
+    Need states and actions mapped as discrete integers 
+    - If you have continuous numbers and need to estimate by discretizing, you would need a large 'Q' dataset of states and actions 
+
+Deep Q- Learning Network
+    - State mapped to 'Q' function with a deep neural network
+    - High dimensional state spaces, continuous spaces
+    - Approximating Q as a neural network
+    - Traffic control, controls for cooling of data centers 
+
+Deep neural network 
+    - Computing machines that approximate functions
+    - Lots of parameters 
+
+DQN Theory 
+- Agent learns a policy that maximizes cummulative reward r over time 
+For T rounds 
+- Agents looks at current state
+- Selects actions (using epsilon greedy policy balanced exploitation and exploration)
+- Implements action with reward 
+- State, action, reward, and next state is stored in transition tuple/replay buffer ('experience')
+- Instead of training on consecutive samples (Q-learning traditional), system run for a while for it to gain experience then update trainable parameters  using experimeters and run again 
+- Target network is to stabilize training, a delayed copy of the main Q-network, copies the weights from main Q-network 
+
+Batch DQN Algorithm 
+- Have 2 sets of parameters: Brain (Q) and target (Q')
+- Randomly initialize parameters (learning rate a, discount factor g, exploration rate e, minimum expereicnes in relay buffer B, parameter update count C)
+- Replay buffer B can be infinite 
+- Episode is task: getting from point A to B 
+    - Experiences are decisions along the episode and are set into time intervals to create buffers
+- Can redo episodes and generate new buffers
+
+For each time step t=1,..,T
+    roll a number p, if less than e, chose uniform action a, otherwise chose a greedy action 
+    execute action, observe reward, transition to next state
+    store transition (experience) [e= State, action, reward, and next state] in the replay buffer e --> B 
+    Grab some of these elements and train on them by estimating parameters based on them 
+    Compute Q value for each transition using the target network Q 
+    Compute the mean squared loss function over B experiences in mini-batch (L)
+    Perform a single gradient descen step to minimize the loss function L with respect to the parameters 
+
+i.e. 
+use epsilon greedy 
+store experience in a bucket 
+stop 
+train parameters associated with a model (data not in an array like in regular Q-Learning)
+Brain is now a function, not a table 
+THIS WORKS GREAT WITH DISCRETE ACTION SPACES 
+
+Policy Gradient Methods 
+- optimized policy parameters 
+- instead of learning state action value function and THEN extracting a policy, directly parametize the policy
+- π (a|s) = list of probability values for each action you can take from a given state
+- π = exp(transformation of state space) / exp(all other actions) --> this is a probability 
+    - transformation of state space is a linear regression 
+
+generate data for episone π
+compute the return from time t: G
+update policy parameters using a gradient ascent
