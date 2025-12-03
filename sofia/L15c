@@ -1,0 +1,15 @@
+
+- Classical Hopfield networks used Hebbian learning that memorizes binary patterns 
+    - Limited to being used in large data 
+    - Limited to binary patterns 
+- Embedding is converting to a continuous vector
+
+Modern Hopfield Networks and Signle-Head Attention 
+- Exponentially larger storage capacity 
+- Attention mechanism is how the system recognizes one memory vs. another 
+    - Bridges associative memory with modern deep learning
+- Remember many patterns with continuous values and have higher conversion
+- Modern E(s) = ∑ F(m,s) from i = 1 to i = K number of memories
+    - F(m,s) is similarity function
+    - Similarity is the dot product --> high dot product means very similar, low dot product if not similar 
+    
