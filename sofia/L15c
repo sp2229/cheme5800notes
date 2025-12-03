@@ -12,4 +12,19 @@ Modern Hopfield Networks and Signle-Head Attention
 - Modern E(s) = ∑ F(m,s) from i = 1 to i = K number of memories
     - F(m,s) is similarity function
     - Similarity is the dot product --> high dot product means very similar, low dot product if not similar 
-    
+- X is the matrix of memories 
+- X transpose s is the dot product between current state s and each stored memorie to produce a K-dimensional vector of similarities
+    - X is NxK vector && s is a vector of size N 
+    - So is initial partial memory --> sentence given
+Algorithm 
+1. Compute similarity vectors with memories and s (s is the question/query we are asking) to get vector z=XTs 
+2. Compute current probability vector p = softmax (B*Z) that turns vector z into probability distribution by multiplying by temperature 
+    - Softmax is the gradient of our energy 
+3. Compute s'=Xp 
+4. Check for convergence: ||s'-s||≤ E, then converged is true 
+    - If ||P-Pprev||≤ E 
+
+- Make system temperature really hot
+
+Modern Hopfield has no parameters and uses memories 
+- Cooler system has higher probability of decoding with higher confidence 
