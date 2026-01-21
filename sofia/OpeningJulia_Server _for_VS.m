@@ -65,3 +65,10 @@ DEFENSIVE PROGRAMMING (TESTS) FOR USERS TO KNOW WHAT WE AS CODERS HAD IN MIND (G
 INCLUDING TYPES AND DEFINITIONS IN NOTEBOOK DIRECTORY SRC 
 TYPES GOES IN TYPESCOMPUTE IS MATH 
 FACTORY METHOD BUILDS OBJECTS 
+
+
+Code to fix the Include:
+-cd ____ (until you get to the exact file)
+-julia —project=.
+-](close brackets to get to pkg)
+-add ___package name(using link)
